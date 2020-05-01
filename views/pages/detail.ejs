@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>details</h1>
+    <div id="allContainerdetail">
+       
+        <div class="containerdetail">
+            <h3><%=data.name%></h3>
+            <img src="<%=data.img_url%>" alt="digital">
+            <p><%=data.level%></p>
+            <!-- <div> -->
+                <!-- <button class="showdetail">Add</button> -->
+                <form  action="/update/<%=data.id%>?_method=put" method="POST">
+                <input type="text" name="name" value="<%=data.name%>">
+                <input type="text" name="img_url" value="<%=data.img_url%>">
+                <input type="text" name="level" value="<%=data.level%>">
+                <input type="submit" value="update">
+                </form>
+                <form action="/delete/<%=data.id%>?_method=delete" method="POST">
+                <button>Delete</button>
+                </form>
+            <!-- </div> -->
+        </div>
+</body>
+</html>
